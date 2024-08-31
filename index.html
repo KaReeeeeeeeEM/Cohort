@@ -56,8 +56,8 @@
         </div>
       </section>
 
-      <!-- this is the showcase section -->
-       <section class="bg-[#b91c1ccf] flex flex-col lg:flex-row items-center justify-between my-4 lg:my-8 px-4 md:px-12 lg:px-20">
+     <!-- this is the showcase section -->
+     <section class="bg-[#b91c1ccf] flex flex-col lg:flex-row items-center justify-between my-4 lg:my-8 px-4 md:px-12 lg:px-20">
         <!-- this is where we tell the people of how many projects we have done and the number of students as well as the duration we have attended -->
         <div class="w-full flex flex-col md:flex-row items-center justify-center my-4 lg:py-12">
             <div class="w-1/3 text-center my-4 md:my-0">
@@ -74,9 +74,18 @@
             </div>
         </div>
 
-       </section>
+     </section>
 
-     <!-- script for the navigation bar in small screens -->
+     <!-- this is the values section -->
+      <section class="flex flex-col md:flex-row items-center justify-between my-4 lg:my-8 px-4 md:px-12 lg:px-20">
+            <!-- card -->
+             <div class="flex flex-col items-start justify-start p-4 lg:p-8 shadow-lg rounded-lg border-2 border-red-700">
+                 <span class="w-4 h-4 bg-red-700 rounded-full"></span>   
+                <p></p>
+             </div>
+      </section>
+
+      <!-- script for the navigation bar in small screens -->
       <script>
         const dropdown = document.getElementById('dropdown');
         const menu = document.getElementById('menu');
@@ -93,27 +102,25 @@
       </script>
 
       <!-- script for number countdown in the showcase section -->
-<script>
+      <script>
     function countdownNumber(elementId, startValue, endValue, duration) {
-      const element = document.getElementById(elementId);
-      let currentValue = startValue;
-      const stepTime = Math.abs(Math.floor(duration / (endValue - startValue)));
-  
-      const timer = setInterval(() => {
+    const element = document.getElementById(elementId);
+    let currentValue = startValue;
+    const stepTime = Math.abs(Math.floor(duration / (endValue - startValue)));
+
+    const timer = setInterval(() => {
         currentValue++;
         element.innerText = currentValue;
         if (currentValue >= endValue) {
-          clearInterval(timer);
+        clearInterval(timer);
         }
-      }, stepTime);
+    }, stepTime);
     }
     document.addEventListener('DOMContentLoaded', () => {
-      countdownNumber('project-count', 1, 5, 2000);
-      countdownNumber('student-count', 1, 10, 2500);
-      countdownNumber('week-count', 1, 20, 3000);
+    countdownNumber('project-count', 1, 5, 2000);
+    countdownNumber('student-count', 1, 10, 2500);
+    countdownNumber('week-count', 1, 20, 3000);
     });
-  </script>
-  
-       
+      </script>     
 </body>
 </html>

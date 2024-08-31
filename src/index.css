@@ -6,6 +6,17 @@
     font-family: "SUSE", Poppins, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #b91c1c;
+    border-radius: 0.5rem;
+}
+
+
 .active{
     color: #b91c1c
 }
