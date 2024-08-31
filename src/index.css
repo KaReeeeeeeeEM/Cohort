@@ -5,3 +5,7 @@
     transition: 0.5s ease-in-out;
     font-family: "SUSE", Poppins, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
+.active{
+    color: #b91c1c
+}
