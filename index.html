@@ -30,16 +30,33 @@
             </div>
 
             <!-- for small devices -->
-             <div class="h-6 w-6 lg:hidden">
+             <div id="menu" class="h-6 w-6 lg:hidden">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 18L20 18" stroke="#a10c0c" stroke-width="2" stroke-linecap="round"></path> <path d="M4 12L20 12" stroke="#a10c0c" stroke-width="2" stroke-linecap="round"></path> <path d="M4 6L20 6" stroke="#a10c0c" stroke-width="2" stroke-linecap="round"></path> </g></svg>
              </div>
 
-             <div id="dropdown" class="absolute shadow-lg bg-gray-100 flex flex-col items-center justify-center top-16 left-0 w-full rounded">
-                    <span class="my-2 py-2 rounded w-full text-center hover:text-white hover:bg-red-700"><a href="#about" class="hover:text-red-700">About</a></span>
-                    <span class="my-2 py-2 rounded w-full text-center hover:text-white hover:bg-red-700"><a href="#projects" class="hover:text-red-700">Projects</a></span>
-                    <span class="my-2 py-2 rounded w-full text-center hover:text-white hover:bg-red-700"><a href="#contact" class="hover:text-red-700">Contact</a></span>
+             <div id="dropdown" class="absolute shadow-lg bg-gray-100 flex flex-col items-center justify-center -top-96 left-0 w-full rounded -z-10">
+                <span class="my-2 py-2 rounded w-full text-center hover:text-white hover:bg-red-700"><a href="#about" class="hover:text-red-700">About</a></span>
+                <span class="my-2 py-2 rounded w-full text-center hover:text-white hover:bg-red-700"><a href="#projects" class="hover:text-red-700">Projects</a></span>
+                <span class="my-2 py-2 rounded w-full text-center hover:text-white hover:bg-red-700"><a href="#contact" class="hover:text-red-700">Contact</a></span>
              </div>
         </div>
      </nav>
+
+
+     <!-- script for the navigation bar in small screens -->
+      <script>
+        const dropdown = document.getElementById('dropdown');
+        const menu = document.getElementById('menu');
+
+        menu.addEventListener('click', () => {
+            if(dropdown.classList.contains("-top-96")) {
+                dropdown.classList.remove("-top-96");
+                dropdown.classList.add("top-16");
+            }else{
+                dropdown.classList.remove("top-16");
+                dropdown.classList.add("-top-96");
+            }
+        });
+      </script>
 </body>
 </html>
