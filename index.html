@@ -3,11 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Binary Cohort - 2024</title>
     <link rel="shortcut icon" href="src/assets/bin10labs.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/index.css">
+    <title>Binary Cohort - 2024</title>
 </head>
-<body>
-    <h1 class="bg-red-700">Binary cohort 2024</h1>
+<body class="px-4 md:px-12 lg:px-20">
+    <!-- this is the nav section -->
+     <nav>
+        <div class="flex justify-between items-center w-full h-16 bg-white shadow-md px-8 md:px-12">
+            <div class="flex items-center">
+                <img class="h-4 w-8 hidden lg:block lg:h-6 lg:w-16" src="src/assets/bin10labs.png" alt="Binary Cohort logo">
+                <span class="ml-4 lg:ml-8 lg:text-2xl text-red-700 font-bold">Binary Cohort - 2024</span>
+            </div>
+            <div class="hidden lg:flex items-center">
+                <ul class="flex space-x-4">
+                    <li><a href="#about" class="hover:text-red-700">About</a></li>
+                    <li><a href="#projects" class="hover:text-red-700">Projects</a></li>
+                    <li><a href="#contact" class="hover:text-red-700">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+     </nav>
 </body>
 </html>
