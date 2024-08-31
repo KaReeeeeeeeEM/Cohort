@@ -11,14 +11,16 @@
     <link rel="stylesheet" href="src/index.css">
     <title>Binary Cohort - 2024</title>
 </head>
-<body class="px-4 md:px-12 lg:px-20">
+<body class="px-4 md:px-12 lg:px-20 z-30">
     <!-- this is the nav section -->
      <nav>
-        <div class="flex justify-between items-center w-full h-16 bg-white shadow-md px-8 md:px-12">
+        <div class="flex relative justify-between items-center w-full h-16 bg-white shadow-md px-8 md:px-12">
             <div class="flex items-center">
                 <img class="h-4 w-8 hidden lg:block lg:h-6 lg:w-16" src="src/assets/bin10labs.png" alt="Binary Cohort logo">
                 <span class="ml-4 lg:ml-8 lg:text-2xl text-red-700 font-bold">Binary Cohort - 2024</span>
             </div>
+            
+            <!-- for large devices -->
             <div class="hidden lg:flex items-center">
                 <ul class="flex space-x-4">
                     <li><a href="#about" class="hover:text-red-700">About</a></li>
@@ -26,6 +28,17 @@
                     <li><a href="#contact" class="hover:text-red-700">Contact</a></li>
                 </ul>
             </div>
+
+            <!-- for small devices -->
+             <div class="h-6 w-6 lg:hidden">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 18L20 18" stroke="#a10c0c" stroke-width="2" stroke-linecap="round"></path> <path d="M4 12L20 12" stroke="#a10c0c" stroke-width="2" stroke-linecap="round"></path> <path d="M4 6L20 6" stroke="#a10c0c" stroke-width="2" stroke-linecap="round"></path> </g></svg>
+             </div>
+
+             <div id="dropdown" class="absolute shadow-lg bg-gray-100 flex flex-col items-center justify-center top-16 left-0 w-full rounded">
+                    <span class="my-2 py-2 rounded w-full text-center hover:text-white hover:bg-red-700"><a href="#about" class="hover:text-red-700">About</a></span>
+                    <span class="my-2 py-2 rounded w-full text-center hover:text-white hover:bg-red-700"><a href="#projects" class="hover:text-red-700">Projects</a></span>
+                    <span class="my-2 py-2 rounded w-full text-center hover:text-white hover:bg-red-700"><a href="#contact" class="hover:text-red-700">Contact</a></span>
+             </div>
         </div>
      </nav>
 </body>
