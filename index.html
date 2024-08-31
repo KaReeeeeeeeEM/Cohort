@@ -61,15 +61,15 @@
         <!-- this is where we tell the people of how many projects we have done and the number of students as well as the duration we have attended -->
         <div class="w-full flex flex-col md:flex-row items-center justify-center my-4 lg:py-12">
             <div class="w-1/3 text-center my-4 md:my-0">
-                <h3 class="text-2xl font-bold md:text-3xl text-white">5+</h3>
+                <h3 class="text-2xl font-bold md:text-3xl text-white"><span id="project-count">5</span>+</h3>
                 <p class="text-sm md:text-lg text-gray-900">Projects</p>
             </div>
             <div class="w-1/3 text-center my-4 md:my-0">
-                <h3 class="text-2xl font-bold md:text-3xl text-white">10</h3>
+                <h3 id="student-count" class="text-2xl font-bold md:text-3xl text-white">10</h3>
                 <p class="text-sm md:text-lg text-gray-900">Students</p>
             </div>
             <div class="w-1/3 text-center my-4 md:my-0">
-                <h3 class="text-2xl font-bold md:text-3xl text-white">20+</h3>
+                <h3 class="text-2xl font-bold md:text-3xl text-white"><span id="week-count">20</span>+</h3>
                 <p class="text-sm md:text-lg text-gray-900">Weeks</p>
             </div>
         </div>
@@ -91,5 +91,29 @@
             }
         });
       </script>
+
+      <!-- script for number countdown in the showcase section -->
+<script>
+    function countdownNumber(elementId, startValue, endValue, duration) {
+      const element = document.getElementById(elementId);
+      let currentValue = startValue;
+      const stepTime = Math.abs(Math.floor(duration / (endValue - startValue)));
+  
+      const timer = setInterval(() => {
+        currentValue++;
+        element.innerText = currentValue;
+        if (currentValue >= endValue) {
+          clearInterval(timer);
+        }
+      }, stepTime);
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      countdownNumber('project-count', 1, 5, 2000);
+      countdownNumber('student-count', 1, 10, 2500);
+      countdownNumber('week-count', 1, 20, 3000);
+    });
+  </script>
+  
+       
 </body>
 </html>
