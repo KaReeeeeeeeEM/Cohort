@@ -158,7 +158,7 @@
             <!-- this is where the swiper slides go -->
             <swiper-container class="mySwiper" pagination-clickable="true"  space-between="30"
              centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
-            <swiper-slide class="relative">
+            <swiper-slide>
                 <div class="w-12 h-12 md:w-16 md:h-16">
                     <img src="src/assets/boy.png" alt="boy" class="">
                 </div>
@@ -174,7 +174,7 @@
                 </div>
             </swiper-slide>
 
-            <swiper-slide class="relative">
+            <swiper-slide>
                 <div class="w-12 h-12 md:w-16 md:h-16">
                     <img src="src/assets/girl.png" alt="girl" class="">
                 </div>
@@ -191,7 +191,7 @@
                 </div>
             </swiper-slide>
 
-            <swiper-slide class="relative">
+            <swiper-slide>
                 <div class="w-12 h-12 md:w-16 md:h-16">
                     <img src="src/assets/girl.png" alt="girl" class="">
                 </div>
@@ -207,7 +207,7 @@
                 </div>
             </swiper-slide>
 
-            <swiper-slide class="relative">
+            <swiper-slide>
                 <div class="w-12 h-12 md:w-16 md:h-16">
                     <img src="src/assets/boy.png" alt="boy" class="">
                 </div>
@@ -223,7 +223,7 @@
                 </div>
             </swiper-slide>
 
-            <swiper-slide class="relative">
+            <swiper-slide>
                 <div class="w-12 h-12 md:w-16 md:h-16">
                     <img src="src/assets/boy.png" alt="boy" class="">
                 </div>
@@ -239,7 +239,7 @@
                 </div>
             </swiper-slide>
 
-            <swiper-slide class="relative">
+            <swiper-slide>
                 <div class="w-12 h-12 md:w-16 md:h-16">
                     <img src="src/assets/muslim.png" alt="muslim" class="">
                 </div>
@@ -255,7 +255,7 @@
                 </div>
             </swiper-slide>
 
-            <swiper-slide class="relative">
+            <swiper-slide>
                 <div class="w-12 h-12 md:w-16 md:h-16">
                     <img src="src/assets/boy.png" alt="boy" class="">
                 </div>
@@ -271,7 +271,7 @@
                 </div>
             </swiper-slide>
 
-            <swiper-slide class="relative">
+            <swiper-slide>
                 <div class="w-12 h-12 md:w-16 md:h-16">
                     <img src="src/assets/girl.png" alt="girl" class="">
                 </div>
@@ -287,7 +287,7 @@
                 </div>
             </swiper-slide>
 
-            <swiper-slide class="relative">
+            <swiper-slide>
                 <div class="w-12 h-12 md:w-16 md:h-16">
                     <img src="src/assets/boy.png" alt="boy" class="">
                 </div>
@@ -303,7 +303,7 @@
                 </div>
             </swiper-slide>
 
-            <swiper-slide class="relative">
+            <swiper-slide>
                 <div class="w-12 h-12 md:w-16 md:h-16">
                     <img src="src/assets/girl.png" alt="girl" class="">
                 </div>
@@ -318,7 +318,6 @@
                     </p>
                 </div>
             </swiper-slide>
-           
           </swiper-container> 
         </section>
 
@@ -329,15 +328,50 @@
                 <p class="text-white">Want to be part of us? Stay updated with the announcement of the cohorts.</p>
             </div>
             <div class="w-full lg:w-1/2 flex lg:items-end lg:justify-end my-4 lg:my-0">
-                <form action="#" method="post">
+                <form id="form">
                     <input type="email" name="email" placeholder="Enter your email address" class="py-2 px-4 rounded focus:outline-none text-red-700" required>
-                    <button type="submit" class="bg-white text-red-700 font-bold px-4 py-2 rounded-lg">Subscribe</button>
+                    <button id="button" type="submit" class="bg-white text-red-700 font-bold px-4 py-2 rounded-lg">Subscribe</button>
                 </form>
             </div>
          </section>
+
+    <!-- this are the scripts for subscription -->
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+     <script type="text/javascript">
+        emailjs.init('BWL3FGYa9JCepBZBh')
+      </script>
+
+     <script>
+        const btn = document.getElementById('button');
+        const form = document.getElementById('form');
+        const email = document.getElementsByName('email')[0];
+        
+        form.addEventListener('submit', function(event) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!regex.test(email.value)) {
+                alert('Invalid email address');
+                event.preventDefault();
+            }else{
+                event.preventDefault();
+                const serviceID = 'service_jv99gfd';
+                const templateID = 'template_c3ydz5z';
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then((result) => {
+                    console.log('Email sent:', result.text);
+                    alert('submitted')
+                    }, (error) => {
+                    alert(error.text);
+                    console.log('Email sending error:', error.text);
+                    });
+                email.value = "";
+            }
+        });
+     </script>
       
-        <!-- script for the swiper slides carousels -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <!-- script for the swiper slides carousels -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
       <!-- script for the navigation bar in small screens -->
       <script>
