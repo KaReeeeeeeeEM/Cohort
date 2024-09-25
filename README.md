@@ -11,7 +11,7 @@ This project is aimed at hosting websites on Virtual Servers (Apache Servers) in
 
 ## Installation
 
-Here we shall first learn on how to host your website locally in the Virtual Server using HTTP on the default port 80.
+Here we shall first learn on how to host your website locally in the Virtual Server using HTTPS on the default port 443.
 
 1. Clone your repository
 - The repository name in github has a signature of .git whereas the repository url is supposed to have a format of 'https://github.com/[your-github-username]/[your-repo-name].git'.
