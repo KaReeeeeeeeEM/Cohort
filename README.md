@@ -117,7 +117,7 @@ Here we shall first learn on how to host your website locally in the Virtual Ser
      ```
 
 ## Usage
-   - After applying the configurations above successfully, you can now access your website locally using HTTPS on your Virtual Server by either 'https://localhost' or 'https://[your-server-ip].
+   - After applying the configurations above successfully, you can now access your website locally using HTTPS on your Virtual Server by either 'https://localhost' or 'https://[your-server-ip]'.
      ```bash
         https://localhost # if you are using your own device to host
         https://[your-server-ip] # to access the website using another device
